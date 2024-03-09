@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { NameInput, TelInput } from './../input/inputs';
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
 const SubmitButton = styled.button`
@@ -28,9 +27,8 @@ export const ContactForm = ({ onSubmit }) => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    const id = nanoid();
-    console.log(name, number, id);
-    onSubmit({ id, name, number });
+    console.log(name, number);
+    onSubmit({ name, number });
   };
 
   return (
